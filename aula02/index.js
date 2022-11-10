@@ -1,6 +1,13 @@
 const express = require("express");
 
 const app = express();
+
+const db = require('../db/dbconfig.js')
+
+db.once('open', ()=> {
+  console.log('Conexão com o banco realizada!')
+})
+
 const bodyParser = require("body-parser");
 
 const hostname = "192.168.2.162";
